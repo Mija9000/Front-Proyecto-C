@@ -2,7 +2,7 @@
 const API_URL = import.meta.env.VITE_API_URL || "http://3.82.20.249:3001/api";
 
 export async function obtenerCursos() {
-  const response = await fetch(`${API_URL}/cursos`);
+  const response = await fetch(`${API_URL}/ms1/api/cursos`);
   if (!response.ok) throw new Error("Error al obtener cursos");
   
   // 👇 El backend devuelve { success: true, data: [...] }
@@ -11,7 +11,7 @@ export async function obtenerCursos() {
 }
 
 export async function crearCurso(curso: any) {
-  const response = await fetch(`${API_URL}/cursos`, {
+  const response = await fetch(`${API_URL}/ms1/api/cursos`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(curso),
